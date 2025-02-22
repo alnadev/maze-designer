@@ -15,27 +15,33 @@ let block_select_end = document.getElementById("select-block-end");
 let block_select_player = document.getElementById("select-block-player");
 let block_select_erase = document.getElementById("select-block-erase");
 
-function share_data() {
-	let toshare = `BLOCKS_COUNT: ${count[0] - 1} ${count[1] - 1}\n`;
+function generate_data() {
+	let generated = `BLOCKS_COUNT: ${count[0] - 1} ${count[1] - 1}\n`;
 	for (let x = 0; x < buttons.length; x++) {
 		switch (buttons[x].className) {
 			case "block-wall":
-				toshare += "BLOCK: " + buttons[x].id + "\n";
+				generated += "BLOCK: " + buttons[x].id + "\n";
 				break;
 			case "block-end":
-				toshare += "END_POINT: " + buttons[x].id + "\n";
+				generated += "END_POINT: " + buttons[x].id +
+					"\n";
 				break;
 			case "block-player":
-				toshare += "PLAYER_POSITION: " + buttons[x].id +
+				generated += "PLAYER_POSITION: " +
+					buttons[x].id +
 					"\n";
 				break;
 			default:
 				break;
 		}
 	}
+	return generated;
+}
+
+function share_data() {
 	navigator.share({
 		title: "Level",
-		text: toshare,
+		text: generate_data(),
 	});
 }
 

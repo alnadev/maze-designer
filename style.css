@@ -31,8 +31,8 @@ body {
 }
 
 .child-container {
-	width: 100vmin;
-	height: 100vmin;
+	width: 94vmin;
+	height: 94vmin;
 	display: grid;
 	background-color: blue;
 

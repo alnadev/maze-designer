@@ -1,0 +1,116 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+	background-color: blue;
+
+	--border-width: 2px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: blue;
+}
+
+.selection-container {
+	justify-items: center;
+	align-items: center;
+	background-color: blue;
+}
+
+.child-container {
+	width: 100vmin;
+	height: 100vmin;
+	display: grid;
+	background-color: blue;
+
+	border-right: var(--border-width) solid white;
+	border-bottom: var(--border-width) solid white;
+}
+
+.block {
+	background-color: blue;
+
+	border-color: white;
+	border-style: solid;
+	border-bottom: var(--border-width);
+	border-right: var(--border-width);
+}
+
+.select-block {
+	height: 5vh;
+	width: 5vh;
+	background-color: blue;
+	border-color: white;
+	border-style: solid;
+	border-width: var(--border-width);
+}
+
+.select-block:disabled {
+	background-color: black;
+}
+
+.select-block-selected {
+	height: 5vh;
+	width: 5vh;
+	border-color: black;
+	border-style: solid;
+	border-width: var(--border-width);
+}
+
+.select-block-player {
+	background-color: red;
+}
+
+.select-block-wall {
+	background-color: white;
+}
+
+.select-block-end {
+	background-color: green;
+}
+
+.block:hover {
+	background-color: darkblue;
+}
+
+.block:active {
+	background-color: navy;
+}
+
+.block-wall {
+	background-color: white;
+	border-color: white;
+	border-style: solid;
+	border-width: var(--border-width);
+}
+
+.block-player {
+	background-color: red;
+
+	border-color: white;
+	border-style: solid;
+	border-bottom: var(--border-width);
+	border-right: var(--border-width);
+}
+
+.block-end {
+	background-color: green;
+
+	border-color: white;
+	border-style: solid;
+	border-bottom: var(--border-width);
+	border-right: var(--border-width);
+}

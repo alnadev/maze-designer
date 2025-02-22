@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Color Maze Designer</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="selection-container">
+		<button class="select-block" id="select-block" onclick="select_type('block')"></button>
+		<button class="select-block select-block-wall" id="select-block-wall"
+			onclick="select_type('block-wall')"></button>
+		<button class="select-block select-block-end" id="select-block-end"
+			onclick="select_type('block-end')"></button>
+		<button class="select-block select-block-player" id="select-block-player"
+			onclick="select_type('block-player')"></button>
+	</div>
+	<div class="container">
+		<div class="child-container" id="child-container">
+		</div>
+	</div>
+	<script src="main.js">
+	</script>
+</body>
+
+</html>

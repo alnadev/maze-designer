@@ -5,11 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Color Maze Designer</title>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="style.css" rel="stylesheet">
 </head>
 
 <body>
 	<div class="selection-container">
+		<button class="select-block" onclick="share_data()"><i class="fa fa-share"></i></button>
 		<button class="select-block" id="select-block" onclick="select_type('block')"></button>
 		<button class="select-block select-block-wall" id="select-block-wall"
 			onclick="select_type('block-wall')"></button>

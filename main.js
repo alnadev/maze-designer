@@ -3,18 +3,41 @@ let buttons = [];
 let child_container = document.getElementById("child-container");
 
 let count = [16, 16];
+count = [count[0] + 1, count[1] + 1];
 
 child_container.style.gridTemplateColumns = "1fr ".repeat(count[0]);
 child_container.style.gridTemplateRows = "1fr ".repeat(count[1]);
 
 let selected_type = "block-player"; // block-player | block-end | block-wall | block
 
-let is_player_present = false;
-
 let block_select_wall = document.getElementById("select-block-wall");
 let block_select_end = document.getElementById("select-block-end");
 let block_select_player = document.getElementById("select-block-player");
 let block_select_erase = document.getElementById("select-block-erase");
+
+function share_data() {
+	let toshare = `BLOCKS_COUNT: ${count[0] - 1} ${count[1] - 1}\n`;
+	for (let x = 0; x < buttons.length; x++) {
+		switch (buttons[x].className) {
+			case "block-wall":
+				toshare += "BLOCK: " + buttons[x].id + "\n";
+				break;
+			case "block-end":
+				toshare += "END_POINT: " + buttons[x].id + "\n";
+				break;
+			case "block-player":
+				toshare += "PLAYER_POSITION: " + buttons[x].id +
+					"\n";
+				break;
+			default:
+				break;
+		}
+	}
+	navigator.share({
+		title: "Level",
+		text: toshare,
+	});
+}
 
 function select_type(type) {
 	let previous_block_select = document.getElementById(
@@ -53,7 +76,7 @@ function clicked(id, event) {
 for (let x = 1; x <= count[0]; x++) {
 	for (let y = 1; y <= count[1]; y++) {
 		let button = document.createElement("button");
-		button.id = `${x},${y}`;
+		button.id = `${y - 1} ${x - 1}`;
 		button.className = "block";
 		button.onclick = (x) => clicked(button.id, x);
 		buttons.push(button);

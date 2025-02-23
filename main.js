@@ -62,7 +62,7 @@ function clicked(id, event) {
 	if (
 		button.className == "block-player" ||
 		button.className == "block-end" &&
-			selected_type != "player-block"
+		selected_type != "player-block"
 	) {
 		document.getElementById(`select-${button.className}`).disabled =
 			false;

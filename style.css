@@ -43,7 +43,7 @@ body {
 }
 
 .block {
-	background-color: blue;
+	background-color: transparent;
 
 	border-color: white;
 	border-style: solid;

@@ -49,6 +49,8 @@ body {
 	border-style: solid;
 	border-bottom: var(--border-width);
 	border-right: var(--border-width);
+
+	transition: background-color 100ms;
 }
 
 .select-block {
@@ -60,6 +62,9 @@ body {
 	border-color: white;
 	border-style: solid;
 	border-width: var(--border-width);
+
+	transition: background-color 230ms;
+	transition: border-color 300ms;
 }
 
 .select-block:disabled {
@@ -67,6 +72,7 @@ body {
 }
 
 .select-block-selected {
+	margin: 2px;
 	height: 5vh;
 	width: 5vh;
 	border-color: black;
